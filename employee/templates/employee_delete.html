@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Employee Data Delete {% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="alert alert-danger" role="alert">
+        Are You sure you want to delete the data of {{person.first_name}} {{person.last_name}} !!!
+      </div>
+<form action="" method="POST">
+    {% csrf_token %}
+   
+        <a href="/employee" class="btn btn-outline-success">Cancel</a>
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+            
+</form>
+</div>
+{% endblock %}

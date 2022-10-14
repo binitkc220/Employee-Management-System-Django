@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} User Registration {% endblock %}
+
+{% block content %}
+
+<div class="containerfluid"
+  style="background-image: url('{% static "cityfull.jpg" %}'); background-size: cover,contain;background-repeat: no-repeat;">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="col d-flex justify-content-center">
+      <div class="card text border-secondary mt-4 mb-3" style="width: 32rem;">
+        <div class="card-header" style="background-color:#f5b342">
+          <h3 style="color:#2819fc;">User Registration Form</h3>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title" align="right" style="color:#e61b1b;">* Required Field</h6>
+          {{ register_form|crispy }}
+        </div>
+        <div class="card-footer text-muted text-center">
+          <button type="submit" class="btn btn-success">Sign Up</button>
+          <br>
+          <p>Already Have an Account? <a href="{% url 'user_login' %} ">Login In</a> Instead..</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+  var register_form_fields = document.getElementsByTagName('input')
+  register_form_fields[1].placeholder = 'eg-youname220@'
+  register_form_fields[2].placeholder = 'Type your first name...'
+  register_form_fields[3].placeholder = 'Type your last name...'
+  register_form_fields[4].placeholder = 'eg-hello@gmail.com'
+  register_form_fields[5].placeholder = 'Type your strong password...'
+  register_form_fields[6].placeholder = 'Type your password again for confirmation...'
+</script>
+
+
+
+{% endblock %}

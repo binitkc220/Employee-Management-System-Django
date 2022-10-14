@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} My Homepage {% endblock %}
+
+{% block content %}
+
+<script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+<div class="container">
+
+   <!-- Masthead-->
+   <header class="masthead bg-primary text-white text-center" style="background-image: url('{% static "city.jpg" %}'); background-size: contain;background-repeat: no-repeat;">
+    <div class="container d-flex align-items-center flex-column">
+        
+        <h1 class="masthead-heading text-uppercase mb-0">City Computer Education</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">"IT Development is our Determination"</p>
+        <p class="masthead-subheading font-weight-light mb-0">Welcome: {{user}}</p>
+    </div>
+</header>
+
+
+        <h4>Total Number of Employees : {{employee_no}}</h4>
+        <h4>Total Number of Employeers : {{employeer_no}}</h4>
+       
+      </div>
+
+    
+</div>
+
+{% endblock %}
